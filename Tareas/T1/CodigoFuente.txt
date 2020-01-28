@@ -1,0 +1,50 @@
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author danis
+ */
+public class T1_Edd1s20 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        System.out.println ("Empezamos el programa");
+        System.out.println ("Por favor introduzca tamaño matriz:");
+
+        String numero="";
+
+        Scanner entrada = new Scanner (System.in);
+        numero = entrada.nextLine (); 
+        System.out.println();
+        
+        System.out.println ("Tamanio de la matriz es: \"" + numero +"\"");
+       
+        
+        int tam = Integer.parseInt(numero);
+        
+        int [][] matriz = new int[tam][tam];
+        
+        //RELLENANDO BORDES CON "1"        
+        for (int x=0; x < matriz.length; x++) {            
+            for (int y=0; y < matriz[x].length; y++) {
+                if(x==0 || x==(matriz.length-1) || y==0 || y==(matriz.length-1)  ){
+                    matriz[x][y]= 1;
+                }
+            }
+        }        
+        
+        //IMPRIMIENDO MATRIZ        
+        for (int x=0; x < matriz.length; x++) {            
+            for (int y=0; y < matriz[x].length; y++) {
+                System.out.print (matriz[x][y]);
+            }
+            System.out.println();
+        }
+        
+        System.out.println();      
+    }   
+}
